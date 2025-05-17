@@ -9,7 +9,7 @@ require('dotenv').config();
 app.use(cors()); 
 app.use(express.json());
 
-const webhookUrl = process.env.GOOGLE_CALENDAR_WEBHOOK;
+const webhookUrl = process.env.GOOGLE_CALENDAR_WEBHOOK ;
 app.post('/proxy', async (req, res) => {
   try {
     const response = await fetch(webhookUrl, {
