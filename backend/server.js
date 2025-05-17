@@ -4,9 +4,17 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const corsOptions = {
+    origin: 'https://fodraszidopont.netlify.app', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+  };
+  
+  app.use(cors(corsOptions));
+  
+
 require('dotenv').config();
 
-app.use(cors()); 
 app.use(express.json());
 
 const webhookUrl = process.env.GOOGLE_CALENDAR_WEBHOOK ;
