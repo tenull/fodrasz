@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 require('dotenv').config();
 
@@ -27,4 +28,4 @@ app.post('/proxy', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => console.log(`Proxy szerver fut a ${process.env.PORT} -es porton`));
+app.listen(PORT, () => console.log(`Proxy szerver fut a ${PORT} -es porton`));
