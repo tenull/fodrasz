@@ -1,0 +1,6 @@
+# Ignore service account credentials
+config/service-account.json
+
+# Optional: ignore .env and other sensitive files
+.env
+.env.local
