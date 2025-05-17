@@ -27,4 +27,4 @@ app.post('/proxy', async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => console.log('Proxy szerver fut a 3001-es porton'));
+app.listen(process.env.PORT, () => console.log(`Proxy szerver fut a ${process.env.PORT} -es porton`));
