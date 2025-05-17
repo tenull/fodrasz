@@ -4,13 +4,11 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const corsOptions = {
-    origin: 'https://fodraszidopont.netlify.app', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-  };
   
-  app.use(cors(corsOptions));
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','PUT','DELETE'],
+  }));
   
 
 require('dotenv').config();
