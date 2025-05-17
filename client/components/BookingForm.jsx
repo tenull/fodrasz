@@ -33,7 +33,7 @@ const BookingForm = ({ startDate, endDate, onClose }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://fodrasz.onrender.com', {
+      const response = await fetch('https://fodrasz.onrender.com/proxy', {
         method: 'POST',
         body: JSON.stringify({ ...form, endDate }),
         headers: {
